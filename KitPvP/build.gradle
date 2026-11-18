@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+}
+
+dependencies {
+    // Paper 26.2 API. Do NOT add/pin Adventure yourself - Paper 26.2 ships Adventure 5.
+    // If this exact build is ever missing, use '26.2.build.+' instead.
+    compileOnly 'io.papermc.paper:paper-api:26.2.build.124-stable'
+}
+
+// Paper 26.x requires Java 25
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+    options.encoding = 'UTF-8'
+}
+
+tasks.processResources {
+    filesMatching('plugin.yml') {
+        expand(version: project.version)
+    }
+}
+
+jar {
+    archiveBaseName = 'KitPvP'
+}

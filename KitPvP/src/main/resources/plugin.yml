@@ -1,0 +1,36 @@
+name: KitPvP
+version: '${version}'
+main: com.example.kitpvp.KitPvP
+api-version: '26.2'
+description: KitPvP plugin with kit shop, stats, killstreaks, combat tag and scoreboard
+commands:
+  kit:
+    description: Open the kit menu or equip a kit
+    usage: /kit [name]
+    permission: kitpvp.use
+  spawn:
+    description: Teleport to spawn
+    usage: /spawn
+    permission: kitpvp.use
+  stats:
+    description: View stats
+    usage: /stats [player]
+    permission: kitpvp.use
+  top:
+    description: Leaderboards
+    usage: /top [kills|deaths|streak|coins]
+    permission: kitpvp.use
+  kitadmin:
+    description: Admin commands
+    usage: /kitadmin <reload|setspawn|givecoins|unlock>
+    permission: kitpvp.admin
+permissions:
+  kitpvp.use:
+    default: true
+  kitpvp.admin:
+    default: op
+  kitpvp.build:
+    default: op
+  kitpvp.kit.vip:
+    description: Access to the VIP kit
+    default: false

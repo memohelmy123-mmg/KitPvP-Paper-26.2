@@ -1,0 +1,21 @@
+# Set the spawn in-game with /kitadmin setspawn
+spawn-radius: 15            # PvP is disabled inside this radius of spawn
+kits-only-in-spawn: true    # kits can only be equipped inside the spawn radius
+auto-kit-on-respawn: true   # re-give the last selected kit after dying
+heal-on-kill: true
+no-hunger: true
+combat-tag-seconds: 10      # logging out while tagged = death + killer credit
+
+coins:
+  starting: 0
+  per-kill: 10
+  streak-bonus: 2           # extra coins per streak level
+  max-streak-bonus-kills: 10
+
+killstreak:
+  announce-every: 5
+
+scoreboard:
+  enabled: true
+  title: "<red><bold>KITPVP"
+  footer: "<yellow>play.yourserver.net"
